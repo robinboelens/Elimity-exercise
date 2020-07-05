@@ -1,0 +1,23 @@
+<mat-card>
+  <h2>{{project.title}}</h2>
+  <p>
+    <b>Owner:</b> {{project.owner}} <br>
+    <b>Priority:</b> {{getProjectPriority()}} <br>
+    <b>Due date:</b> {{project.dueDate.toDateString()}} <br>
+    <b>Tasks:</b> {{getNbTasks()}}
+  </p>
+
+  <div *ngIf="showTasks">
+    <ul *ngIf="hasTasks(); else noTasksMessage">
+      <li *ngFor="let task of project.tasks">
+        {{task.title}} ({{getTaskPriority(task)}})
+      </li>
+    </ul>
+    <ng-template #noTasksMessage>
+      <p *ngIf="showTasks" class="noneAvailable">No tasks</p>
+    </ng-template>
+  </div>
+
+  <br>
+  <button mat-button color="primary" (click)="onShowTasksChange()">{{showTasks ? "HIDE TASKS" : "SHOW TASKS"}}</button>
+</mat-card>

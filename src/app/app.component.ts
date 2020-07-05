@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { Priority } from './priority';
 import { Project } from './project';
 
@@ -8,6 +8,7 @@ import { Project } from './project';
 })
 export class AppComponent {
     title = 'frontend-exercise';
+    selectionOption = '';
 
     public readonly projects: Project[] = [
         {
@@ -105,5 +106,30 @@ export class AppComponent {
         },
     ];
 
+    selectionOptions: string[] = [
+      'Show all',
+      'Hide all',
+      'Separate',
+      ];
+
     private showTasks = this.projects.map((_) => false);
+
+    onSelectionChange(event: any): void {
+      this.selectionOption = event.target.value;
+      switch (this.selectionOption) {
+        case 'Show all': {
+          break;
+        }
+        case 'Hide all': {
+          break;
+        }
+        case 'Separate': {
+          break;
+        }
+        default: {
+          break;
+        }
+      }
+    }
+
 }

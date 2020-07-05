@@ -10,20 +10,23 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { ProjectInfoCardComponent } from './project-info-card/project-info-card.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-    declarations: [AppComponent],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        MatCardModule,
-        MatButtonModule,
-        MatListModule,
-        MatButtonToggleModule,
-        MatFormFieldModule,
-        MatSelectModule,
-    ],
+    declarations: [AppComponent, ProjectInfoCardComponent],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatButtonModule,
+    MatListModule,
+    MatButtonToggleModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    FormsModule
+  ],
     providers: [],
     bootstrap: [AppComponent],
 })
